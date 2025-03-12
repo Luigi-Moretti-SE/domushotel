@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domus-Best-fotos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="logos/mini logo.png"  type="image/x-icon">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header {
+      border-bottom: 3px solid #535152;
+    }
+
+  body {
+    font-family: 'Crimson Text', serif;
+    background: f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+  }
+
+  .header {
+position: sticky;
+top: 0;
+display: flex;
+justify-content: space-between; /* Space between the items */
+align-items: center;
+width: 100%;
+height: 15vh;
+padding: 0 5%;
+background-color: #535152;
+z-index: 10;
+box-sizing: border-box;
+}
+
+.grid-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid-row {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+}
+.image {
+  border-radius: 10px;
+  max-width: 400px;
+  height:fit-content;
+  flex-shrink: 0; 
+  transition: all 0.5s ease;
+}
+
+.image:hover{
+  max-width: 800px;
+}
+
+.overlay-content-CAVOUR-SUITE {
+    color: white;
+    background-color: #313768;
+    }
+
+    .overlay-content-DOMUS-BEST {
+    color: #535152;
+    border: 2px solid #535152;
+    background-color: transparent;
+    }
+
+    .overlay-content-DOMUS-CAVOUR {
+    color: white;
+    background-color: #396831;
+    }
+
+    .overlay-content-DOMUS-MAZZINI {
+    color: white;
+    background-color: #B4AA2E;
+    }
+    .footer {
+      background-color: #535152;
+    }
+
+.rooms-title {
+  width: 80%;
+  padding-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #535152;
+  text-align: center;
+  border-top: 2px solid #535152;
+}
+@media (max-width: 1024px) {
+    .grid-row {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    .grid-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image{
+      max-width: 90%;
+    }
+    .image:hover{
+      max-width: 90%
+
+    }
+    .header {
+  height: 8vh; /* Adjust height for smaller screens */
+  padding: 0 3%; /* Reduce padding for smaller screens */
+}
+.header .main-logo {
+  height: 7vh; /* Adjust logo size for smaller screens */
+}
+}
+</style>
+<body>
+    <div class="header">
+      <!-- Back Button -->
+      <div class="back-button" onclick="goBack()">
+        <img src="icons\icons8-indietro-50.png" alt="Back Button">
+      </div>
+    
+      <!-- Main Logo -->
+      <img class="main-logo" src="logos/Domus best foto.png" alt="Main Logo">
+    
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu">
+        <img src="icons\icons8-menu-50.png" alt="Menu">
+      </div>
+      
+      <!-- Navigation Overlay -->
+      <div class="overlay" id="navOverlay">
+        <div class="overlay-container">
+          <img src="logos/guest house.png" alt="Logo" class="overlay-logo">
+          <a href="cavour-suite" class="overlay-content overlay-content-CAVOUR-SUITE">CAVOUR SUITE</a>
+          <a href="domus-best" class="overlay-content overlay-content-DOMUS-BEST">DOMUS BEST</a>
+          <a href="domus-cavour" class="overlay-content overlay-content-DOMUS-CAVOUR">DOMUS CAVOUR</a>
+          <!---<a href="domus-mazzini" class="overlay-content overlay-content-DOMUS-MAZZINI">DOMUS MAZZINI</a>--->
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2637.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2645.jpg" alt="Room 2">
+    </div>
+    <div class="grid-row">
+      <img class="image" src="DOMUSBEST_selezionexsito/IMG_2651.jpg" alt="Room 1">
+      <img class="image" src="DOMUSBEST_selezionexsito/IMG_2659.jpg" alt="Room 2">
+  </div>
+  <div class="grid-row">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2676.jpg" alt="Room 1">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2683.jpg" alt="Room 2">
+</div>
+<div class="grid-row">
+  <img class="image" src="DOMUSBEST_selezionexsito/IMG_2697.jpg" alt="Room 2">
+</div>
+    <h2 class="rooms-title">SINGOLA</h2>
+    <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2730.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2744.jpg" alt="Room 2">
+    </div>
+    <h2 class="rooms-title">DOPPIA CLASSIC</h2>
+    <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2811.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2846.jpg" alt="Room 2">
+    </div>
+    <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2851.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2854.jpg" alt="Room 2">
+    </div>
+    <h2 class="rooms-title">TRIPLE CLASSIC</h2>
+    <div class="grid-row">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2769.jpg" alt="Room 1">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2783.jpg" alt="Room 2">
+</div>
+<div class="grid-row">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2596.jpg" alt="Room 1">
+    <img class="image" src="DOMUSBEST_selezionexsito/IMG_2618.jpg" alt="Room 2">
+    </div>
+    <h2 class="rooms-title">FAMILY CLASSIC</h2>
+    <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2872.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2879.jpg" alt="Room 2">
+    </div>
+    <div class="grid-row">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2893.jpg" alt="Room 1">
+        <img class="image" src="DOMUSBEST_selezionexsito/IMG_2910.jpg" alt="Room 2">
+    </div>
+</div>
+</div>
+<footer class="footer">
+    <div class="footer-content">
+      <div class="contact">
+        <h3>Contattaci</h3>
+        <p>Via Fabio Massimo, 88, 00192 Roma RM</p>
+        <p>+39335363831</p>
+        <p>+393358039437</p>
+        <p>+39(0)645421592</p>
+        <p>info@domushotel.it</p>
+      </div>
+      <div class="navigation">
+        <h3>Navigazione</h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="cavour-suite">Cavour Suite</a></li>
+            <li><a href="domus-best">Domus Best</a></li>
+            <li><a href="domus-cavour">Domus Cavour</a></li>
+            <!--<li><a href="domus-mazzini">Mazzini</a></li>-->
+          </ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

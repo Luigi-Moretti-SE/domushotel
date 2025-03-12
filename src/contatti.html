@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domus Hotel Guest House</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="logos/mini logo.png"  type="image/x-icon">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background: f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 10px;
+      padding-bottom: 50px;
+    }
+
+    /* Header */
+    .header {
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 15vh;
+      padding: 0 5%;
+      border-bottom: 3px solid #c73e41;
+      background-color: #f8f9fa;
+      z-index: 10;
+    }
+
+    .header .back-button,
+    .header .hamburger-menu {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    .header .back-button img,
+    .header .hamburger-menu img {
+      max-width: 30px;
+      height: auto;
+    }
+
+    .header .main-logo {
+      max-height: 12vh;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items:start;
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      border-top: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .contact-item img {
+      width: 60px;
+      border-radius: 50%;
+      height: 60px;
+      padding: 5px;
+      border: 2px solid #c73e41;
+      margin-bottom: 10px;
+    }
+
+    .contact-item p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 5px;
+    }
+
+    .contact-item span {
+      font-size: 14px;
+      color: #2a2a2a;
+    }
+
+    /* Footer */
+    .footer {
+width: 100%;
+background-color: #c73e41;
+color: white;
+padding: 20px;
+text-align: center;
+box-sizing: border-box;
+}
+
+.carousel-container {
+
+width: 100%;
+position: relative;
+}
+
+.carousel {
+display: flex;
+gap: 20px;
+transition: transform 0.5s ease;
+will-change: transform;
+}
+
+.carousel img {
+width: 100%;
+max-width: 300px;
+height: auto;
+border-radius: 10px;
+transition: transform 0.3s ease;
+cursor: grab;
+flex-shrink: 0;
+}
+
+.carousel img:hover {
+transform: scale(1.1); /* Grow slightly on hover */
+z-index: 1; /* Ensure the image stays on top */
+transition: transform 0.2s ease-in-out;
+}
+
+.carousel-container {
+overflow:visible; /* Prevent cutting off images */
+}
+
+
+    /* Overlay styling */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw; /* Restrict to viewport width */
+height: 100vh; /* Restrict to viewport height */
+padding: 40px;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+display: flex; /* Always present in the DOM */
+flex-direction: column;
+align-items: flex-end; /* Align items to the right */
+z-index: 1000;
+opacity: 0; /* Start hidden */
+visibility: hidden; /* Hide the element visually */
+transform: translateY(-20px); /* Slide effect */
+transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease; /* Smooth transition */
+pointer-events: none; /* Prevent clicks when hidden */
+overflow: hidden; /* Prevent scrolling inside the overlay */
+}
+
+.overlay.show {
+opacity: 1; /* Fade in */
+visibility: visible; /* Make the element visible */
+transform: translateY(0); /* Reset slide */
+pointer-events: auto; /* Enable interactions */
+}
+
+.overlay-container {
+background-color: f8f9fa;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 80%;
+max-width: 400px;
+}
+
+/* Logo styling */
+.overlay-logo {
+max-width: 200px;
+margin-bottom: 20px;
+}
+
+/* Common link styling */
+.overlay-content {
+display: block;
+font-size: 1.25rem;
+text-decoration: none;
+margin: 10px 0;
+padding: 10px 20px;
+border-radius: 5px;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Individual link styles */
+.overlay-content-CAVOUR-SUITE {
+color: #ffffff;
+background-color: #313768;
+}
+
+.overlay-content-DOMUS-BEST {
+color: white;
+background-color: #535152;
+}
+
+.overlay-content-DOMUS-CAVOUR {
+color: white;
+background-color: #396831;
+}
+
+.overlay-content-DOMUS-MAZZINI {
+color: white;
+background-color: #B4AA2E;
+}
+
+/* Hover effect for all links */
+.overlay-content:hover {
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a soft shadow for depth */
+transform: scale(1.03); /* Slight zoom for the whole card */
+}
+
+  @media (max-width: 768px) {
+    
+    .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+
+    .carousel img {
+    max-width: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .overlay-content {
+      font-size: 1.1rem;
+    }
+    .footer {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .carousel-container {
+      overflow-x: scroll;
+    }
+    
+    .header {
+    height: 8vh; /* Adjust height for smaller screens */
+    padding: 0 3%; /* Reduce padding for smaller screens */
+    }
+    .header .main-logo {
+    height: 7vh; /* Adjust logo size for smaller screens */
+    }
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <!-- Back Button -->
+        <div class="back-button" onclick="goBack()">
+          <img src="icons\icons8-indietro-50.png" alt="Back Button">
+        </div>
+      
+        <!-- Main Logo -->
+        <img class="main-logo" src="logos/guest house.png" alt="Main Logo">
+      
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+          <img src="icons\icons8-menu-50.png" alt="Menu">
+        </div>
+        
+        <!-- Navigation Overlay -->
+        <div class="overlay" id="navOverlay">
+          <div class="overlay-container">
+            <img src="logos/guest house.png" alt="Logo" class="overlay-logo">
+            <a href="cavour-suite" class="overlay-content overlay-content-CAVOUR-SUITE">CAVOUR SUITE</a>
+            <a href="domus-best" class="overlay-content overlay-content-DOMUS-BEST">DOMUS BEST</a>
+            <a href="domus-cavour" class="overlay-content overlay-content-DOMUS-CAVOUR">DOMUS CAVOUR</a>
+            <!---<a href="domus-mazzini" class="overlay-content overlay-content-DOMUS-MAZZINI">DOMUS MAZZINI</a>--->
+          </div>
+        </div>
+        </div>
+      </div>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <!-- Phone Section -->
+    <div class="contact-item">
+      <img src="icons\icons8-telefono-50.png" alt="Phone Icon">
+      <p>Phone</p>
+      <span>+39 335363831<br>+39 3358039437</span>
+    </div>
+    <!-- Email Section -->
+    <div class="contact-item">
+      <img src="icons\icons8-posta-elettronica-50.png" alt="Email Icon">
+      <p>Email</p>
+      <span>info@domushotel.it</span>
+    </div>
+  </div>
+
+  <!-- Footer Section with Carousel -->
+  <footer class="footer">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="SELEZIONE_SITO/5DM_9324.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9357.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9411.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9421.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9446.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9461.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9517.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9557.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9592.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9606.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9641.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9655.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9667.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9702.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9742.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9770.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9774.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9785.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9810.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9860.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9880.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9885.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9901.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9931.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9946.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9968.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9988.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9996.jpg" alt="Room 1">
+        <img src="SELEZIONE_SITO/5DM_9998.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2596.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2618.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2637.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2645.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2651.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2659.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2676.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2683.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2697.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2730.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2744.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2759.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2769.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2783.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2811.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2846.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2851.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2854.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2872.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2879.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2893.jpg" alt="Room 1">
+        <img src="DOMUSBEST_selezionexsito/IMG_2910.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/Copia di DSC_0214.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5948.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5956.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5959.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5962.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5983.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5995.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_5997.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6000.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6041.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6067.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6085.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6086.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6097.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/D8C_6104.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0153.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0154.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0157.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0159.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0161.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/DSC_0204.jpg" alt="Room 1">
+        <img src="DOMUSCAVOUR_selezionexsito/soggiorno2.jpg" alt="Room 1">
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

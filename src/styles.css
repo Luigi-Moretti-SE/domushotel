@@ -1,0 +1,551 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Crimson Text', serif;
+    background: #cec0b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1042px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh auto;
+  }
+
+  .header {
+position: sticky;
+top: 0;
+display: flex;
+justify-content: space-between; /* Space between the items */
+align-items: center;
+width: 100%;
+height: 15vh;
+padding: 0 5%;
+border-bottom: 3px solid #313768;
+background-color: #f8f9fa;
+z-index: 10;
+box-sizing: border-box;
+}
+
+.header .back-button,
+.header .hamburger-menu {
+cursor: pointer; /* Adds clickability for interactive elements */
+display: flex;
+justify-content: center;
+align-items: center;
+width: 40px; /* Adjust as needed */
+height: 40px; /* Adjust as needed */
+}
+
+.header .back-button img,
+.header .hamburger-menu img {
+max-width: 30px;
+height: auto;
+}
+
+.header .main-logo {
+max-width: auto; /* Adjust logo size */
+height: 14vh;
+}
+
+  .content {
+    width: 100%;
+    margin-top: 2vh;
+  }
+
+  .card {
+    width: 100%;
+    border: 2px solid #313768;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    cursor: pointer;
+    width: 100%;
+    height: 450px;
+    background: url('SELEZIONE_SITO/5DM_9946.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    padding-right: 40px;
+    border-bottom: 2px solid #313768;
+    transition: filter 0.2s ease;
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+  }
+
+  .description {
+    padding: 20px;
+    background: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: Inter, sans-serif;
+  }
+
+  .amenities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-top: 2px solid #313768;
+  }
+
+  .amenity {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.amenity img {
+width: 30px;
+height: auto;
+}
+
+.amenity-text {
+  text-align: end;
+font-size: 0.9rem;
+font-family: Inter, sans-serif;
+font-weight: 400;
+text-align: left;
+}
+  .container1 {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap for responsiveness */
+  align-items: center; /* Aligns items vertically in the center */
+  width: 100%;
+  max-width: 100%; /* Prevents the container from overflowing */
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #313768;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: show; /* Ensures content does not spill out */
+
+}
+
+.container1 .text-content {
+  flex: 1; /* Makes the text content take up remaining space */
+  min-width: 200px; /* Ensures text does not shrink too much */
+  box-sizing: border-box; /* Includes padding and borders in width */
+}
+
+.container1 .label1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  word-wrap: break-word; /* Prevents text from overflowing */
+}
+
+.container1 .subheading1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.container1 .description1 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 5px 0;
+  word-wrap: break-word; /* Prevents overflowing text */
+}
+
+.container1 iframe {
+  width: 100%; /* Make iframe responsive */
+  height: 300px; /* Set a default height */
+  border-radius: 10px; /* Optional: Rounded corners */
+  border: none; /* Remove the border for clean styling */
+  margin-top: 20px; /* Add spacing from text content */
+  transition: height 0.3s ease;
+}
+
+.container1 iframe:hover {
+  height: 500px;
+}
+
+.rooms-section {
+    width: 90%;
+    max-width: 1042px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.rooms-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #313768;
+  text-align: center;
+}
+
+.rooms-grid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.room-card {
+  background: white;
+  border: 2px solid #313768;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+  border-bottom: 2px solid #313768;
+  object-fit: cover;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.room-image:hover {
+  transform: scale(1.05);
+}
+
+.room-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.room-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.room-info {
+  font-size: 1rem;
+  color: #535152;
+  margin-bottom: 10px;
+}
+
+.room-button {
+  width: 200px;
+  height: 50px;
+  background: #313768;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.room-button:hover {
+  background: #535BA8;
+  transform: scale(1.05);
+}
+
+.room-button-text {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+width: 100%;
+background-color: #2b3364;
+color: white;
+padding: 20px;
+text-align: center;
+box-sizing: border-box;
+}
+
+.carousel-container {
+
+width: 100%;
+position: relative;
+margin-bottom: 20px;
+}
+
+.carousel {
+display: flex;
+gap: 20px;
+transition: transform 0.5s ease;
+will-change: transform;
+}
+
+.carousel img {
+width: 100%;
+max-width: 300px;
+height: auto;
+border-radius: 10px;
+transition: transform 0.3s ease;
+cursor: grab;
+flex-shrink: 0;
+}
+
+.carousel img:hover {
+transform: scale(1.1); /* Grow slightly on hover */
+z-index: 1; /* Ensure the image stays on top */
+transition: transform 0.2s ease-in-out;
+}
+
+.carousel-container {
+overflow:visible; /* Prevent cutting off images */
+}
+
+/* Footer Content */
+.footer-content {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.contact, .navigation {
+flex: 1;
+min-width: 200px;
+}
+
+.contact h3, .navigation h3 {
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.contact p, .navigation ul {
+font-size: 1rem;
+margin: 5px 0;
+}
+
+.navigation ul {
+list-style: none;
+padding: 0;
+}
+
+.navigation ul li {
+margin: 5px 0;
+}
+
+.navigation ul li a {
+color: white;
+text-decoration: none;
+}
+
+.navigation ul li a:hover {
+text-decoration: underline;
+}
+/* Overlay styling */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw; /* Restrict to viewport width */
+height: 100vh; /* Restrict to viewport height */
+padding: 40px;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+display: flex; /* Always present in the DOM */
+flex-direction: column;
+align-items: flex-end; /* Align items to the right */
+z-index: 1000;
+opacity: 0; /* Start hidden */
+visibility: hidden; /* Hide the element visually */
+transform: translateY(-20px); /* Slide effect */
+transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease; /* Smooth transition */
+pointer-events: none; /* Prevent clicks when hidden */
+overflow: hidden; /* Prevent scrolling inside the overlay */
+}
+
+.overlay.show {
+opacity: 1; /* Fade in */
+visibility: visible; /* Make the element visible */
+transform: translateY(0); /* Reset slide */
+pointer-events: auto; /* Enable interactions */
+}
+
+.overlay-container {
+background-color: #f8f9fa;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 80%;
+max-width: 400px;
+}
+
+/* Logo styling */
+.overlay-logo {
+max-width: 200px;
+}
+
+/* Common link styling */
+.overlay-content {
+display: block;
+font-size: 1.25rem;
+text-decoration: none;
+margin: 10px 0;
+padding: 10px 20px;
+border-radius: 5px;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Individual link styles */
+.overlay-content-CAVOUR-SUITE {
+color: #313768;
+border: 2px solid #313768;
+}
+
+.overlay-content-DOMUS-BEST {
+color: white;
+background-color: #535152;
+}
+
+.overlay-content-DOMUS-CAVOUR {
+color: white;
+background-color: #396831;
+}
+
+.overlay-content-DOMUS-MAZZINI {
+color: white;
+background-color: #B4AA2E;
+}
+
+/* Hover effect for all links */
+.overlay-content:hover {
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a soft shadow for depth */
+transform: scale(1.03); /* Slight zoom for the whole card */
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .image-container {
+      height: 200px;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .amenity img {
+      width: 40px;
+    }
+
+    .amenity-text {
+      font-size: 0.8rem;
+    }
+
+    .book-now2 {
+      width: 150px;
+      height: 40px;
+    }
+
+    .book-now-text2 {
+      font-size: 0.9rem;
+    }
+
+    .container1 {
+      flex-direction: column;
+      align-items: center;
+    }
+    .container1 .image-right {
+        max-width: 300px;
+    }
+    .rooms-title {
+      font-size: 1.5rem;
+    }
+
+    .room-card {
+      flex-direction: column;
+    }
+    .footer-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel img {
+  max-width: 200px;
+}
+  }
+
+  @media (max-width: 480px) {
+    .overlay-content {
+      font-size: 1.1rem;
+    }
+    .footer {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .carousel-container {
+      overflow-x: scroll;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    .container1 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container1 .label1 {
+      font-size: 1rem;
+    }
+    
+    .container1 .image-right {
+        max-width: 200px;
+    }
+
+    .container1 .description1 {
+      font-size: 0.8rem;
+    }
+    .room-button {
+      width: 100%;
+      text-align: center;
+    }
+    
+.header {
+  height: 8vh; /* Adjust height for smaller screens */
+  padding: 0 3%; /* Reduce padding for smaller screens */
+}
+.header .main-logo {
+  height: 7vh; /* Adjust logo size for smaller screens */
+}
+}

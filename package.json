@@ -1,0 +1,11 @@
+{
+  "name": "bnb-website",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "http-server src"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "imagemin-jpegoptim": "^8.0.0"
+  }
+}
